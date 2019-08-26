@@ -149,10 +149,28 @@ let maze = [
 ]; */
 
 function mazeSolution(array){
-  if (array.length === 0){
+  if(array.length == 0){
     return ''
   }
-  else {
-    if ()
-  }
+    return mazeSolution(array[array.length-1].map(entry => entry === ' ' ? 'R' : 'D'))
+  
+ 
 }
+
+//works for small maze
+
+
+/* Write a recursive function that prints out the binary representation of a given number. For example, the program should take 3 as an input
+ and print 11 as output, 
+or 25 as an input and print 11001 as an output. Note that the binary representation of 0 should be 0. */
+function binaryNum(num){
+  if (num < 0){
+  return ''
+  }
+  else {
+    let binary = num%2
+    return binaryNum(Math.floor(num/2)) + binary
+    }
+}
+
+binaryNum(5)
